@@ -44,11 +44,11 @@ app.get('/', function homepage(req, res) {
  * ORDER THAT THE TESTS DICTATE.
  */
 
-// app.get('/api/todos/search', function search(req, res) {
-//   /* This endpoint responds with the search results from the
-//    * query in the request. COMPLETE THIS ENDPOINT LAST.
-//    */
-// });
+app.get('/api/todos/search', function search(req, res) {
+  /* This endpoint responds with the search results from the
+   * query in the request. COMPLETE THIS ENDPOINT LAST.
+   */
+});
 
 app.get('/api/todos', function index(req, res) {
   res.json({ todos: todos });
@@ -84,6 +84,8 @@ app.put('/api/todos/:id', function update(req, res) {
 });
 
 app.delete('/api/todos/:id', function destroy(req, res) {
+  var remove = todos[req.params.id -1]
+
   /* This endpoint will delete a single todo with the
    * id specified in the route parameter (:id) and respond
    * with deleted todo.
