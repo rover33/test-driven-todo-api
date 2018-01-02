@@ -69,7 +69,7 @@ app.post('/api/todos', function create(req, res) {
 });
 
 app.get('/api/todos/:id', function show(req, res) {
-  res.send(todos[req.params.id -1])
+  res.json(todos[req.params.id -1])
   /* This endpoint will return a single todo with the
    * id specified in the route parameter (:id)
    */
@@ -95,10 +95,9 @@ app.put('/api/todos/:id', function update(req, res) {
 });
 
 app.delete('/api/todos/:id', function destroy(req, res) {
-  res.send(todos[req.params.id -1])
+  res.json(todos[req.params.id -1])
   todos.splice([req.params.id -1], 1)
-
-  /* This endpoint will delete a single todo with the
+  /* This endpoint will delete  single todo with the
    * id specified in the route parameter (:id) and respond
    * with deleted todo.
    */
